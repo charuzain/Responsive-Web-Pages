@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container-1{
+      font-family: sans-serif;
+      /* background-color:black; */
+      border:2px solid black;
+      font-size: 40px;
+      margin:40px;
+     display: grid;
+
+     /* grid-template-columns:1fr 1fr 1fr 1fr ; */
+     grid-template-columns: repeat(4,1fr);
+     grid-template-rows: 1fr 1fr;
+     row-gap: 10px;
+     column-gap: 10px;
+
+    }
+    .el-1{
+      background-color: red;
+    }
+    .el-2{
+      background-color: pink;
+    }
+    .el-3{
+      background-color: blue;
+      height: 150px;
+    }
+    .el-4{
+      background-color: green;
+      grid-column: 3/4;
+      grid-row: 2/3;
+    }
+    .el-5{
+      background-color: yellow;
+    }
+    .el-6{
+      background-color: orange;
+    }
+    .el-7{
+      background-color: grey;
+    }
+    .el-8{
+      background-color: orchid;
+      grid-column: 4/5;
+      grid-row: 1/2;
+    }
+    
+
+
+    .container-2{
+      display: none;
+      width: 1000px;
+      height:600px;
+      background-color: brown;
+      margin:100px;
+      font-size: 40px;
+      font-family: sans-serif;
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <div class="container-1">
+    <div class="el el-1">Html</div>
+    <div class="el el-2">and</div>
+    <div class="el el-3">css</div>
+    <div class="el el-4">are</div>
+    <div class="el el-5">amazing</div>
+    <div class="el el-6">languages in the world</div>
+    <div class="el el-7">to</div>
+    <div class="el el-8">learn</div>
+  </div>
+
+  <div class="container-2">
+    <div class="el el-1">1</div>
+    <div class="el el-2">2</div>
+    <div class="el el-3">3</div>
+    <div class="el el-4">4</div>
+    <div class="el el-5">5</div>
+    <div class="el el-6">6</div>
+    <div class="el el-7">7</div>
+    <div class="el el-8">8</div>
+
+  </div>
+</body>
+</html>
