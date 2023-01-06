@@ -11,7 +11,7 @@ body{
 .container{
   width: 960px;
   /* background-color: red; */
-  border:2px solid green;
+  /* border:2px solid green; */
   margin:0 auto;
 }
 
@@ -68,6 +68,32 @@ font-style: italic;
 margin-bottom: 24px;
 }
 
-.author{
+.section-heading{
+margin: 28px 0px;
+font-weight: bold;
+font-size: 24px;
+}
 
+.product-title{
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 19px;
+}
+
+.product-feature{
+  list-style-type: none;
+  margin-bottom: 20px;
+ 
+}
+
+.product-feature li{
+  margin-bottom: 24px;
+}
+.price-shipping{
+  display: flex;
+  justify-content: space-between;
+}
+.section-container{
+  margin-bottom: 24px;
 }
