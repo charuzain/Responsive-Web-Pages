@@ -1,0 +1,50 @@
+*{
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: sans-serif;
+}
+
+.container{
+  width: 960px;
+  /* background-color: red; */
+  border:2px solid green;
+  margin:0 auto;
+}
+
+img{
+  width: 100%;
+}
+
+.header-conatiner{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  column-gap: 80px;
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+.header-description{
+  align-self: center;
+}
+.header-title{
+  margin-bottom: 20px;
+  font-size: 34px;
+}
+.header-summary{
+  margin-bottom: 20px;
+  line-height: 1.2rem;
+}
+.grad-col-3{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  column-gap: 80px;
+  margin-top:48px;
+  margin-bottom:48px
+}
+.feature-title{
+  font-weight: bold;
+  margin-bottom: 20px;
+}
