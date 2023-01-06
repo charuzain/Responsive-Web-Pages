@@ -48,3 +48,26 @@ img{
   font-weight: bold;
   margin-bottom: 20px;
 }
+
+.testimonial{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+column-gap: 80px;
+}
+.testimonial-box{
+  grid-column: 2/4;
+  align-self: center;
+}
+.testimonial-heading{
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+.testimonial-description{
+font-style: italic;
+margin-bottom: 24px;
+}
+
+.author{
+
+}
