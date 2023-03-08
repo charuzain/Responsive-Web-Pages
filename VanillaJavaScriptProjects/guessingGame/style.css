@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800;900&family=EB+Garamond:wght@700&display=swap');
+
+body{
+  background-color: green;
+  color: white;
+}
+*{
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height:10vh;
+  /* border:2px solid red; */
+  font-family: 'EB Garamond', serif;
+ 
+  
+
+}
+.again{
+  /* display: inline-flex; */
+  font-size: 32px;
+  padding:30px;
+  margin-left: 20px;
+  margin-top: 10px;
+  /* height: 20px; */
+  line-height:10px;
+  background-color:whitesmoke;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  
+
+}
+.again:hover{
+  color: brown;
+}
+.rule{
+  font-size: 32px;
+  color: white;
+  padding-top: 20px;
+  margin-right: 10px;
+  font-weight: lighter;
+
+}
+.display{
+  text-align: center;
+  margin-top:20px;
+  /* border:2px solid red; */
+
+}
+
+.display h1{
+  font-family: 'EB Garamond', serif;
+  font-size: 48px;
+  color: white;
+  word-spacing: 10px;
+  text-transform: capitalize;
+  letter-spacing: 3px;
+}
+.num{
+  width: 200px;
+  background-color: white;
+  text-align: center; 
+  /* margin: 0 auto; */
+  padding: 30px;
+  margin: 0px auto;
+  color:black;
+  border:2px solid red;
+  margin-top:30px;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.section-result{
+  display: flex;
+  justify-content: space-around;
+
+
+}
+.left{
+  display: flex;
+  flex-direction: column;
+  /* border:2px solid red */
+}
+#guessedNumber{
+  height: 70px;
+  padding:20px;
+
+  background-color: green;
+  color: white;
+  font-size: 32px;
+  text-align: center;
+  width: 150px;
+  /* outline: none; */
+  margin-left: 60px;
+  margin-top: 40px;
+  font-weight: bold;
+  border:2px solid white;
+  
+
+}
+#check-btn{
+  font-size: 32px;
+  padding:20px;
+  margin-left: 60px;
+  margin-top: 30px;
+  /* height: 20px; */
+  line-height:10px;
+  background-color:whitesmoke;
+  border: none;
+  font-weight: bold;
+  cursor: pointer
+
+
+}
+
+.right{
+  margin-right: 100px;
+  margin-top: 40px;
+  line-height: 50px;
+  font-size: 32px;
+
+}
