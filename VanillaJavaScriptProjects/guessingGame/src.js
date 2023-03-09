@@ -19,6 +19,7 @@ let high = 0
       if (Number(guessedNum.value) === randomNum) {
         msg.textContent = "You got it on the last chance !!!"
         result.textContent = "You won on last chance !!!"
+        document.body.style.backgroundColor ="black"
       }
       else {
         msg.textContent = "Game Over !!!"
@@ -49,7 +50,7 @@ let high = 0
           high = score
         }
         highScore.textContent = high
-
+        document.body.style.backgroundColor ="black"
       }
     }
     
