@@ -106,3 +106,39 @@ const addUserName = (acc) => {
 }
 console.log(addUserName(accounts))
 
+// filter deposit and withdrawl
+const movement = [200, 450, -400, 3000, -650, -130, 70, 1300]
+
+const deposits = movement.filter(elem => elem > 0)
+const withdrawal = movement.filter(elem => elem <0)
+// console.log(movement)
+// console.log(deposits)
+// console.log(withdrawal)
+
+// display Balance inn Bank account
+
+const displayBalance = (movements) => {
+  const balance = movements.reduce((a, c) => a + c, 0)
+  // console.log(balance)`
+  labelBalance.textContent = `${balance}€`
+}
+displayBalance(account1.movements)
+
+
+// display account summary at botttom
+
+const displaySummary = (movements) => {
+  const input = movement.filter(mov => mov > 0).reduce((a, c) => a + c, 0)
+  labelSumIn.textContent = `${input}€`
+
+  const withdrawal = movement.filter(mov => mov < 0).reduce((a, c) => a + c, 0)
+  labelSumOut.textContent = `${Math.abs(withdrawal)}€`
+
+
+  const interest = movement.filter(mov => mov > 0).map(deposit => (deposit * 1.2) / 100).
+    filter(int => int > 1).reduce((acc, int) => acc + int, 0)
+    labelSumInterest.textContent = `${interest}€`
+}
+
+displaySummary(account1.movements)
+
