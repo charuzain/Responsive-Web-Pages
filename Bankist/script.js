@@ -71,18 +71,6 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
-// const account1 = {
-//   owner: 'Jonas Schmedtmann',
-//   movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
-//   interestRate: 1.2, // %
-//   pin: 1111,
-// };
-
-
-
-//
 
 const displayMovement = (movements) => {
   containerMovements.innerHTML = ""
@@ -106,4 +94,15 @@ const displayMovement = (movements) => {
 }
 displayMovement(account1.movements)
 
+
+// add username 
+
+console.log(accounts)
+
+const addUserName = (acc) => {
+  for (let account of acc) {
+    account.username = account.owner.toLowerCase().split(' ').map(word =>word[0]).join('')
+  }
+}
+console.log(addUserName(accounts))
 
