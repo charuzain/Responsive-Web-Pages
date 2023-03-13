@@ -139,6 +139,7 @@ const displaySummary = (movements , int) => {
 
 
 // login 
+let enteredUser
 
 btnLogin.addEventListener('click', (e) => {
   e.preventDefault()
@@ -146,7 +147,7 @@ btnLogin.addEventListener('click', (e) => {
 
   const username = inputLoginUsername.value.toLowerCase()
   const userpin = inputLoginPin.value
-  const enteredUser = accounts.find(acc => acc.username === username)
+  enteredUser = accounts.find(acc => acc.username === username)
   // console.log(enteredUser)
 
 
@@ -170,4 +171,39 @@ btnLogin.addEventListener('click', (e) => {
 
 })
 
+// TRANSFER
 
+
+btnTransfer.addEventListener('click', (e) => {
+  e.preventDefault()
+  const userTransferTo = inputTransferTo.value
+  const amountToTransfer = Number(inputTransferAmount.value)
+  console.log(amountToTransfer)
+
+  // check if user to which amount is transfered exist
+
+
+  const receiverAcc = accounts.find(user => user.username === userTransferTo)
+ 
+  // check if amount transfer is positive and is less  than or equal to account balance
+
+
+  if (amountToTransfer >0 && enteredUser.movements.reduce((a, c) => a + c, 0) >= amountToTransfer && receiverAcc && receiverAcc.username !== enteredUser.username) {
+    //update sender balance
+    enteredUser.movements.push(-amountToTransfer)
+    console.log(enteredUser.movements)
+    // update UI
+    displayBalance(enteredUser.movements)
+    displayMovement(enteredUser.movements)
+    displaySummary(enteredUser.movements , enteredUser.interestRate)
+
+
+    // update receiver balance
+    receiverAcc.movements.push(amountToTransfer)
+    // console.log(receiverAcc.movements)
+
+  }
+  
+ 
+
+})
