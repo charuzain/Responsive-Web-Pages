@@ -142,3 +142,27 @@ const displaySummary = (movements) => {
 
 displaySummary(account1.movements)
 
+// login 
+
+btnLogin.addEventListener('click', (e) => {
+  e.preventDefault()
+
+
+  const username = inputLoginUsername.value.toLowerCase()
+  const userpin = inputLoginPin.value
+  const enteredUser = accounts.find(acc => acc.username === username)
+  console.log(enteredUser)
+  console.log(enteredUser.pin , userpin)
+
+  if (enteredUser && enteredUser.pin === Number(userpin)) {
+    labelWelcome.textContent = `Welcome  Back, ${enteredUser.owner.split(' ')[0]}
+    `
+    // set opacity to 100
+    containerApp.style.opacity = 100
+  
+}
+
+
+})
+
+
