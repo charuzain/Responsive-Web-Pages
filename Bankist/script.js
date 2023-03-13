@@ -92,7 +92,7 @@ const displayMovement = (movements) => {
   }
 
 }
-displayMovement(account1.movements)
+// displayMovement(account1.movements)
 
 
 // add username 
@@ -104,43 +104,39 @@ const addUserName = (acc) => {
     account.username = account.owner.toLowerCase().split(' ').map(word =>word[0]).join('')
   }
 }
-console.log(addUserName(accounts))
+addUserName(accounts)
+console.log(accounts)
+// // filter deposit and withdrawl
+// const movement = [200, 450, -400, 3000, -650, -130, 70, 1300]
 
-// filter deposit and withdrawl
-const movement = [200, 450, -400, 3000, -650, -130, 70, 1300]
+// const deposits = movement.filter(elem => elem > 0)
+// const withdrawal = movement.filter(elem => elem <0)
 
-const deposits = movement.filter(elem => elem > 0)
-const withdrawal = movement.filter(elem => elem <0)
-// console.log(movement)
-// console.log(deposits)
-// console.log(withdrawal)
 
 // display Balance inn Bank account
 
 const displayBalance = (movements) => {
   const balance = movements.reduce((a, c) => a + c, 0)
-  // console.log(balance)`
   labelBalance.textContent = `${balance}€`
 }
-displayBalance(account1.movements)
-
 
 // display account summary at botttom
 
-const displaySummary = (movements) => {
-  const input = movement.filter(mov => mov > 0).reduce((a, c) => a + c, 0)
+const displaySummary = (movements , int) => {
+  console.log(movements)
+
+  const input = movements.filter(mov => mov > 0).reduce((a, c) => a + c, 0)
   labelSumIn.textContent = `${input}€`
 
-  const withdrawal = movement.filter(mov => mov < 0).reduce((a, c) => a + c, 0)
+  const withdrawal = movements.filter(mov => mov < 0).reduce((a, c) => a + c, 0)
   labelSumOut.textContent = `${Math.abs(withdrawal)}€`
 
-
-  const interest = movement.filter(mov => mov > 0).map(deposit => (deposit * 1.2) / 100).
+  const interest = movements.filter(mov => mov > 0).map(deposit => (deposit * int) / 100).
     filter(int => int > 1).reduce((acc, int) => acc + int, 0)
+  console.log(interest)
     labelSumInterest.textContent = `${interest}€`
 }
 
-displaySummary(account1.movements)
 
 // login 
 
@@ -151,14 +147,23 @@ btnLogin.addEventListener('click', (e) => {
   const username = inputLoginUsername.value.toLowerCase()
   const userpin = inputLoginPin.value
   const enteredUser = accounts.find(acc => acc.username === username)
-  console.log(enteredUser)
-  console.log(enteredUser.pin , userpin)
+  // console.log(enteredUser)
+
 
   if (enteredUser && enteredUser.pin === Number(userpin)) {
     labelWelcome.textContent = `Welcome  Back, ${enteredUser.owner.split(' ')[0]}
     `
     // set opacity to 100
-    containerApp.style.opacity = 100
+    containerApp.style.opacity = 100;
+
+    // display total balance
+    displayBalance(enteredUser.movements)
+
+    // display transactions
+    displayMovement(enteredUser.movements)
+
+    // display summary 
+    displaySummary(enteredUser.movements , enteredUser.interestRate)
   
 }
 
