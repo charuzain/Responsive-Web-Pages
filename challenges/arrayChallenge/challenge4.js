@@ -12,13 +12,13 @@ const dogs = [
 ]; 
 
 dogs.forEach(dog => {
-  dog.recommendedFood = dog.weight * 0.75*28
+  dog.recommendedFood = Math.trunc(dog.weight ** 0.75*28)
   
 });
-console.log(dogs)
+// console.log(dogs)
 // 2. Find Sarah's dog and log to the console whether it's eating too much or too little. HINT: Some dogs have multiple owners, so you first need to find Sarah in the owners array, and so this one is a bit tricky (on purpose) 🤓
 const sarahDog = dogs.find(dog => dog.owners.includes('Sarah'))
-console.log(`Sarah dog is eating ${sarahDog.recommendedFood > sarahDog.curFood ? "too much" : "to little" }`)
+console.log(`Sarah dog is eating ${sarahDog.recommendedFood < sarahDog.curFood ? "too much" : "to little" }`)
 
 // 4. Create an array containing all owners of dogs who eat too much ('ownersEatTooMuch') and an array with all owners of dogs who eat too little ('ownersEatTooLittle').
 
@@ -45,7 +45,8 @@ console.log("=====")
 
 
 // 8. Create a shallow copy of the dogs array and sort it by recommended food portion in an ascending order (keep in mind that the portions are inside the array's objects)
-const sortedDogArr = dogs.slice(0).sort((a, b) => {
+const sortedDogArr = [...dogs].slice(0).sort((a, b) => {
   return a.recommendedFood - b.recommendedFood
 })
 console.log(sortedDogArr)
+console.log(dogs)
