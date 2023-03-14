@@ -31,13 +31,15 @@ const poll = {
     if (typeof answer === "number" && (answer >=0 && answer <4)) {
       this.answers[answer] += 1;
     }
-    this.displayResults("abd")
+    this.displayResults("string")
+    this.displayResults()
+
   },
-  displayResults(type) {
-    if (typeof type === "array") {
+  displayResults(type="array") {
+    if (type === "array") {
       console.log(this.answers)
     }
-    if (typeof type === "string") {
+    else if (type === "string") {
        console.log(`Poll result are ${this.answers.join()}`)
     }
 
@@ -52,5 +54,7 @@ console.log(answerPoll)
 document.querySelector('.poll').addEventListener('click', answerPoll)
 
 
+poll.displayResults.call({answers:[5,2,3]}, 'string')
+poll.displayResults.call({answers:[5,2,3]})
 
-// console.log(poll.registerNewAnswer())
+// console.log(poll.displayResults({answers:[5,2,3]}, 'string'))
